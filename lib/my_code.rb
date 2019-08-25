@@ -16,7 +16,15 @@ def map(source_array)
   new
 end
 
-
+def reduce(source_array, start=0)
+  source_array.each do |x|
+    start = yield(start, x)
+  end
+  if start == 0 
+    return true 
+  end 
+  start 
+end 
 
 map([1, 2, 3, -9]) { |n| n*n}
 
